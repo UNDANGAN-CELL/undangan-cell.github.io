@@ -7,12 +7,12 @@ import { buildCalculatorMessage, openWhatsAppChat } from '../utils/whatsapp';
 export const PriceCalculatorSection: React.FC = () => {
   // Preset base options
   const PRESET_OPTIONS = [
-    { label: 'Undangan Softcover Art Carton', price: 1500, defaultQty: 200 },
+    { label: 'Undangan Softcover Art Carton', price: 1000, defaultQty: 300 },
     { label: 'Undangan Rustic / Pocket Minimalis', price: 2200, defaultQty: 200 },
     { label: 'Undangan Semi-Hardcover Mewah', price: 3200, defaultQty: 200 },
     { label: 'Undangan Hardcover Tebal Board', price: 5500, defaultQty: 200 },
-    { label: 'Undangan Khitanan / Sunatan', price: 1300, defaultQty: 150 },
-    { label: 'Undangan Aqiqah / Tasyakuran', price: 1100, defaultQty: 100 },
+    { label: 'Undangan Khitanan / Sunatan', price: 1000, defaultQty: 150 },
+    { label: 'Undangan Aqiqah / Tasyakuran', price: 1000, defaultQty: 100 },
     { label: 'Souvenir Mug Keramik Printing', price: 14000, defaultQty: 100 },
     { label: 'Souvenir Pouch Kanvas Sablon', price: 6500, defaultQty: 150 },
   ];
