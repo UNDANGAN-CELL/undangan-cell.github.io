@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, MessageCircle, Sparkles, ShieldCheck, CheckCircle2, Heart, Award } from 'lucide-react';
+import { ArrowRight, MessageCircle, Sparkles, ShieldCheck, Heart, Award, Star, CheckCircle } from 'lucide-react';
 import { SITE_CONFIG } from '../data/siteConfig';
 import { getWhatsAppUrl } from '../utils/whatsapp';
 
@@ -16,33 +16,42 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onOpenCalculator }
   return (
     <section
       id="hero-section"
-      className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-gradient-to-b from-stone-100/70 via-stone-50 to-stone-50"
+      className="relative pt-28 pb-14 sm:pt-36 sm:pb-20 md:pt-40 md:pb-24 overflow-hidden bg-gradient-to-b from-[#f4efe5] via-[#f7f5ef] to-[#f3efe6] border-b border-stone-200/70"
     >
-      {/* Subtle Islamic Geometric / Floral Background Accents */}
-      <div className="absolute top-12 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 pointer-events-none opacity-25 overflow-hidden">
-        <div className="absolute -top-16 -right-16 w-80 h-80 rounded-full bg-emerald-200/40 blur-3xl" />
-        <div className="absolute top-20 -left-16 w-80 h-80 rounded-full bg-amber-200/30 blur-3xl" />
+      {/* Radiant Background Accents: Gold & Emerald Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none overflow-hidden">
+        <div className="absolute top-12 -right-20 w-96 h-96 rounded-full bg-emerald-300/25 blur-3xl" />
+        <div className="absolute top-28 -left-20 w-96 h-96 rounded-full bg-amber-300/30 blur-3xl" />
+        <div className="absolute bottom-10 left-1/3 w-80 h-80 rounded-full bg-teal-200/20 blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Left Column: Headlines & CTAs */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            {/* Elegant Sub-badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs sm:text-sm font-semibold tracking-wide">
-              <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Percetakan Undangan & Souvenir Terpercaya</span>
+          <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
+            
+            {/* Top Micro-Badges */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
+              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-300/70 text-emerald-900 text-xs sm:text-sm font-bold tracking-wide shadow-xs">
+                <Sparkles className="w-4 h-4 text-emerald-600 fill-emerald-500/20" />
+                <span>Percetakan Undangan & Souvenir Terpercaya</span>
+              </div>
+
+              <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-amber-100/80 border border-amber-300/80 text-amber-900 text-xs font-semibold">
+                <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+                <span>4.9/5 Rating Kepuasan</span>
+              </div>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 tracking-tight leading-[1.15]">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-stone-900 tracking-tight leading-[1.15]">
               Cetak Momen <br className="hidden sm:inline" />
-              <span className="text-emerald-700 relative inline-block">
+              <span className="bg-gradient-to-r from-emerald-800 via-teal-700 to-emerald-900 bg-clip-text text-transparent relative inline-block">
                 Istimewa Anda
                 {/* Decorative underline */}
                 <svg
-                  className="absolute -bottom-2 left-0 w-full h-3 text-emerald-400/50"
+                  className="absolute -bottom-2 left-0 w-full h-3 text-amber-400/80"
                   viewBox="0 0 200 12"
                   fill="none"
                   preserveAspectRatio="none"
@@ -53,18 +62,18 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onOpenCalculator }
             </h1>
 
             {/* Subheadline */}
-            <p className="text-base sm:text-lg text-stone-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              Undangan, souvenir, dan kebutuhan cetak untuk berbagai momen spesial dengan desain menarik dan proses pemesanan yang mudah langsung via WhatsApp.
+            <p className="text-sm sm:text-base md:text-lg text-stone-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+              Undangan, souvenir, dan kebutuhan cetak untuk berbagai momen spesial dengan desain menarik, bahan premium, dan proses pemesanan yang sangat mudah langsung via <span className="font-semibold text-emerald-800">WhatsApp</span>.
             </p>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+            {/* Action Buttons: Highly visible & mobile-friendly */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 pt-2">
               <button
                 id="hero-cta-catalog-btn"
                 onClick={onExploreCatalog}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-base font-semibold text-white bg-stone-900 hover:bg-stone-800 active:bg-black rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm sm:text-base font-bold text-white bg-gradient-to-r from-stone-900 via-stone-900 to-stone-800 hover:from-emerald-900 hover:to-teal-900 active:scale-98 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer min-h-[48px]"
               >
-                <span>Lihat Katalog</span>
+                <span>Lihat Katalog Produk</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
@@ -73,108 +82,110 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCatalog, onOpenCalculator }
                 href={directWhatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-base font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100/90 active:bg-emerald-200 border border-emerald-200 rounded-xl transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 active:scale-98 rounded-xl shadow-md hover:shadow-emerald-600/30 transition-all duration-200 min-h-[48px]"
               >
-                <MessageCircle className="w-5 h-5 text-emerald-600" />
+                <MessageCircle className="w-5 h-5 fill-white/20" />
                 <span>Pesan via WhatsApp</span>
               </a>
 
               <button
                 id="hero-cta-calc-btn"
                 onClick={onOpenCalculator}
-                className="w-full sm:w-auto text-xs sm:text-sm font-medium text-stone-600 hover:text-emerald-700 underline underline-offset-4 py-2 px-3 cursor-pointer"
+                className="inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm font-semibold text-emerald-800 hover:text-emerald-950 bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200/80 py-3 px-4 rounded-xl transition cursor-pointer min-h-[48px]"
               >
-                Hitung Estimasi Harga
+                <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                <span>Hitung Estimasi Biaya</span>
               </button>
             </div>
 
             {/* Trust Badges Bar */}
-            <div className="pt-6 border-t border-stone-200/70 grid grid-cols-3 gap-3 text-center sm:text-left">
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2">
-                <div className="w-8 h-8 rounded-lg bg-emerald-100/80 text-emerald-700 flex items-center justify-center shrink-0">
+            <div className="pt-5 sm:pt-6 border-t border-stone-200/80 grid grid-cols-3 gap-2 sm:gap-4 text-center sm:text-left">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 p-2 rounded-xl bg-white/60 sm:bg-transparent">
+                <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 shadow-xs">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-stone-800">Tanpa Minimal Ribet</div>
-                  <div className="text-[11px] text-stone-500">Mulai dari 50 pcs</div>
+                  <div className="text-xs font-bold text-stone-900 leading-tight">Minimal Fleksibel</div>
+                  <div className="text-[11px] text-stone-500 mt-0.5">Mulai dari 50 pcs</div>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2">
-                <div className="w-8 h-8 rounded-lg bg-amber-100/80 text-amber-700 flex items-center justify-center shrink-0">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 p-2 rounded-xl bg-white/60 sm:bg-transparent">
+                <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 shadow-xs">
                   <Award className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-stone-800">Kualitas Premium</div>
-                  <div className="text-[11px] text-stone-500">Tinta tajam & tebal</div>
+                  <div className="text-xs font-bold text-stone-900 leading-tight">Kualitas Premium</div>
+                  <div className="text-[11px] text-stone-500 mt-0.5">Tinta tajam & tebal</div>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2">
-                <div className="w-8 h-8 rounded-lg bg-rose-100/80 text-rose-700 flex items-center justify-center shrink-0">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 p-2 rounded-xl bg-white/60 sm:bg-transparent">
+                <div className="w-8 h-8 rounded-lg bg-rose-100 text-rose-800 flex items-center justify-center shrink-0 shadow-xs">
                   <Heart className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-stone-800">Bonus Lengkap</div>
-                  <div className="text-[11px] text-stone-500">Plastik & label gratis</div>
+                  <div className="text-xs font-bold text-stone-900 leading-tight">Bonus Komplit</div>
+                  <div className="text-[11px] text-stone-500 mt-0.5">Plastik & label gratis</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Visual Product Showcase Card */}
-          <div className="lg:col-span-5 relative">
+          {/* Right Column: Visual Product Showcase Card with Floating Chips */}
+          <div className="lg:col-span-5 relative mt-4 lg:mt-0">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
+              {/* Outer Glow Ring */}
+              <div className="absolute -inset-1.5 bg-gradient-to-r from-emerald-500 to-amber-400 rounded-3xl blur-md opacity-30 group-hover:opacity-100 transition duration-1000"></div>
+
               {/* Main Visual Card */}
-              <div className="relative rounded-2xl bg-white p-3 sm:p-4 shadow-xl border border-stone-200/80">
-                <div className="relative h-72 sm:h-80 md:h-96 rounded-xl overflow-hidden bg-stone-100">
+              <div className="relative rounded-2xl sm:rounded-3xl bg-white p-3 sm:p-4 shadow-xl border border-stone-200/90">
+                <div className="relative h-64 sm:h-80 md:h-96 rounded-xl sm:rounded-2xl overflow-hidden bg-stone-100 shadow-inner">
                   <img
                     src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80"
                     alt="Koleksi Undangan Elegan RuangKarya"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
                     loading="eager"
                   />
                   
                   {/* Subtle Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-stone-950/20 to-transparent" />
-                  
-                  {/* Floating Mockup Badge */}
-                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-1.5 shadow-sm border border-stone-100 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span className="text-xs font-bold text-stone-800">Koleksi Terpopuler</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/25 to-transparent" />
+
+                  {/* Top Floating Badge */}
+                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full shadow-md border border-amber-300/80 flex items-center gap-1.5 text-xs font-bold text-stone-900">
+                    <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping" />
+                    <span>Promo Undangan Mulai Rp 1.000</span>
                   </div>
 
-                  {/* Bottom Text Over Image */}
-                  <div className="absolute bottom-3 left-3 right-3 text-white">
-                    <div className="text-xs uppercase tracking-wider text-emerald-300 font-semibold mb-1">
-                      Undangan Pernikahan Mewah
+                  {/* Bottom Content Card on Image */}
+                  <div className="absolute bottom-3 left-3 right-3 p-3 sm:p-4 rounded-xl bg-white/95 backdrop-blur-md border border-stone-200 shadow-lg flex items-center justify-between">
+                    <div>
+                      <div className="flex items-center gap-1 text-emerald-800 text-xs font-bold">
+                        <CheckCircle className="w-3.5 h-3.5 text-emerald-600 fill-emerald-100" />
+                        <span>Katalog 2026 Terbaru</span>
+                      </div>
+                      <div className="text-xs sm:text-sm font-extrabold text-stone-900 mt-0.5">
+                        100+ Template Undangan & Souvenir
+                      </div>
                     </div>
-                    <div className="font-serif text-lg sm:text-xl font-bold">
-                      Gold Foil & Rustic Botanical
-                    </div>
-                    <div className="flex items-center justify-between text-xs text-stone-200 mt-1">
-                      <span>Mulai Rp 1.500 / pcs</span>
-                      <span className="text-emerald-300 font-medium">Free Plastik & Label</span>
-                    </div>
+
+                    <button
+                      onClick={onExploreCatalog}
+                      className="shrink-0 px-3 py-1.5 text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg shadow-xs cursor-pointer transition"
+                    >
+                      Buka
+                    </button>
                   </div>
                 </div>
 
-                {/* Floating Floating Micro Card 1 */}
-                <div className="absolute -bottom-5 -left-4 sm:-left-6 bg-white rounded-xl p-3 shadow-lg border border-stone-100 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">
-                    5.0
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-stone-800">1.000+ Momen Terlayani</div>
-                    <div className="text-[11px] text-stone-500">Pernikahan, Sunatan & Aqiqah</div>
-                  </div>
-                </div>
-
-                {/* Floating Micro Card 2 */}
-                <div className="absolute -top-4 -right-4 sm:-right-6 bg-stone-900 text-white rounded-xl p-3 shadow-lg flex items-center gap-2 text-xs font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  <span>Revisi Desain Ramah</span>
+                {/* Micro Benefits Strip below picture */}
+                <div className="mt-3 pt-2.5 border-t border-stone-100 flex items-center justify-between text-[11px] text-stone-600 font-medium px-1">
+                  <span>⚡ Pengerjaan 3-7 Hari</span>
+                  <span>•</span>
+                  <span>🎨 Bebas Revisi Desain</span>
+                  <span>•</span>
+                  <span>📦 Kirim Se-Indonesia</span>
                 </div>
               </div>
 

@@ -71,7 +71,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
     >
       <div
         id="product-detail-modal-container"
-        className="relative bg-white w-full max-w-4xl rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-stone-200 flex flex-col max-h-[92vh]"
+        className="relative bg-[#faf8f4] w-full max-w-4xl rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-stone-200/90 flex flex-col max-h-[92vh]"
       >
         {/* Modal Close Button */}
         <button

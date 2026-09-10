@@ -34,7 +34,7 @@ export const GallerySection: React.FC = () => {
   };
 
   return (
-    <section id="galeri-section" className="py-16 bg-white border-t border-stone-200/80">
+    <section id="galeri-section" className="py-16 bg-[#faf7f2] border-t border-stone-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}

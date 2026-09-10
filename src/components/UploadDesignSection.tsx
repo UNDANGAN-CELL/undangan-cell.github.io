@@ -37,9 +37,9 @@ export const UploadDesignSection: React.FC = () => {
   };
 
   return (
-    <section id="upload-desain-section" className="py-16 bg-stone-50 border-t border-stone-200/80">
+    <section id="upload-desain-section" className="py-16 bg-[#f3efe6] border-t border-stone-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto bg-white rounded-3xl border border-stone-200 p-6 sm:p-10 shadow-sm space-y-6">
+        <div className="max-w-3xl mx-auto bg-[#faf8f4] rounded-3xl border border-stone-200/90 p-6 sm:p-10 shadow-sm space-y-6">
           
           {/* Header */}
           <div className="text-center space-y-2">
@@ -169,9 +169,9 @@ export const UploadDesignSection: React.FC = () => {
                 id="btn-upload-send-wa"
                 type="button"
                 onClick={handleSendViaWhatsApp}
-                className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-sm font-bold shadow transition cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 active:scale-98 text-white text-sm sm:text-base font-bold shadow-md hover:shadow-lg transition cursor-pointer min-h-[48px]"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4 fill-white/20" />
                 <span>Kirim Desain via WhatsApp</span>
               </button>
             </div>

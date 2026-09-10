@@ -8,4 +8,10 @@
 /* Custom scrollbar and smooth transitions */
 html {
   font-family: var(--font-sans);
+  background-color: #f7f5f0;
+}
+
+body {
+  background-color: #f7f5f0;
+  color: #292524;
 }

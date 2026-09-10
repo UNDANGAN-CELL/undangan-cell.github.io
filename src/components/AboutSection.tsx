@@ -9,7 +9,7 @@ export const AboutSection: React.FC = () => {
   );
 
   return (
-    <section id="tentang-section" className="py-16 bg-stone-100/50 border-t border-stone-200/80">
+    <section id="tentang-section" className="py-16 bg-[#f3efe6] border-t border-stone-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
@@ -36,7 +36,7 @@ export const AboutSection: React.FC = () => {
             {/* Values / Keunggulan */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
               {SITE_CONFIG.guarantees.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-2.5 p-3 rounded-xl bg-white border border-stone-200">
+                <div key={idx} className="flex items-start gap-2.5 p-3 rounded-xl bg-[#faf8f4] border border-stone-200/90">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <div>
                     <div className="text-xs font-bold text-stone-900">{item.title}</div>

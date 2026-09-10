@@ -30,7 +30,7 @@ export const HowToOrderSection: React.FC = () => {
   };
 
   return (
-    <section id="cara-pesan-section" className="py-16 bg-white border-t border-stone-200/80">
+    <section id="cara-pesan-section" className="py-16 bg-[#faf7f2] border-t border-stone-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -51,7 +51,7 @@ export const HowToOrderSection: React.FC = () => {
           {HOW_TO_ORDER_STEPS.map((step) => (
             <div
               key={step.step}
-              className="bg-stone-50/70 rounded-2xl p-5 border border-stone-200/80 relative flex flex-col justify-between hover:bg-white hover:shadow-md transition"
+              className="bg-[#f5f1e8]/80 rounded-2xl p-5 border border-stone-200/90 relative flex flex-col justify-between hover:bg-[#faf8f4] hover:shadow-md transition"
             >
               <div>
                 {/* Step Number & Icon */}

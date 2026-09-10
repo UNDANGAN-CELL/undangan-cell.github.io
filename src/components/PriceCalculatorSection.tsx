@@ -58,7 +58,7 @@ export const PriceCalculatorSection: React.FC = () => {
   };
 
   return (
-    <section id="kalkulator-section" className="py-16 bg-white border-t border-stone-200/80">
+    <section id="kalkulator-section" className="py-16 bg-[#faf7f2] border-t border-stone-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -76,7 +76,7 @@ export const PriceCalculatorSection: React.FC = () => {
         </div>
 
         {/* Calculator Grid Box */}
-        <div className="max-w-4xl mx-auto bg-stone-50 rounded-3xl border border-stone-200 p-5 sm:p-8 shadow-sm">
+        <div className="max-w-4xl mx-auto bg-[#f4efe5] rounded-3xl border border-stone-200/90 p-5 sm:p-8 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
             {/* Left Column: Form Controls */}
@@ -207,7 +207,7 @@ export const PriceCalculatorSection: React.FC = () => {
             </div>
 
             {/* Right Column: Dynamic Price Summary Card */}
-            <div className="lg:col-span-5 bg-white rounded-2xl p-5 sm:p-6 border border-stone-200 shadow-md space-y-4">
+            <div className="lg:col-span-5 bg-[#faf8f4] rounded-2xl p-5 sm:p-6 border border-stone-200/90 shadow-md space-y-4">
               <div className="text-xs font-bold uppercase tracking-widest text-emerald-800 pb-2 border-b border-stone-100 flex items-center justify-between">
                 <span>Rincian Estimasi</span>
                 <span className="font-mono text-stone-400">#Kalkulator</span>
@@ -251,17 +251,20 @@ export const PriceCalculatorSection: React.FC = () => {
 
               {/* Total Calculation Display */}
               <div className="pt-3 border-t border-stone-200">
-                <span className="text-xs text-stone-500 block">Estimasi Total Biaya:</span>
-                <div className="text-2xl sm:text-3xl font-serif font-bold text-emerald-800 mt-0.5">
+                <span className="text-xs text-stone-500 block font-medium">Estimasi Total Biaya:</span>
+                <div className="text-2xl sm:text-3xl font-serif font-black text-emerald-800 mt-0.5 tracking-tight">
                   {formatRupiah(calculation.totalEstimate)}
+                </div>
+                <div className="text-[11px] text-stone-500 mt-0.5">
+                  Termasuk {quantity} pcs + {selectedAddOnIds.length} opsi finishing
                 </div>
               </div>
 
               {/* Disclaimer strictly requested by prompt */}
-              <div className="p-3 rounded-xl bg-amber-50/90 border border-amber-200/80 text-[11px] text-amber-900 leading-relaxed flex items-start gap-2">
+              <div className="p-3 rounded-xl bg-amber-50/90 border border-amber-200/90 text-[11px] text-amber-950 leading-relaxed flex items-start gap-2.5">
                 <Info className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
                 <p>
-                  Harga yang ditampilkan merupakan estimasi. Harga final dapat berubah berdasarkan spesifikasi pesanan dan akan dikonfirmasi admin melalui WhatsApp.
+                  Harga yang ditampilkan merupakan estimasi cepat. Harga final dapat disesuaikan dengan kebutuhan desain & bahan spesifik via WhatsApp admin.
                 </p>
               </div>
 
@@ -269,10 +272,10 @@ export const PriceCalculatorSection: React.FC = () => {
               <button
                 id="btn-confirm-calc-wa"
                 onClick={handleConfirmViaWhatsApp}
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-xs sm:text-sm font-bold shadow transition cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 active:scale-98 text-white text-sm font-bold shadow-md hover:shadow-lg transition cursor-pointer min-h-[48px]"
               >
-                <MessageCircle className="w-4 h-4" />
-                <span>Konfirmasi Harga via WhatsApp</span>
+                <MessageCircle className="w-4 h-4 fill-white/20" />
+                <span>Kirim Estimasi ke WhatsApp</span>
               </button>
             </div>
 

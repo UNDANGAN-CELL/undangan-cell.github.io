@@ -11,7 +11,7 @@ export const FloatingWhatsApp: React.FC = () => {
   );
 
   return (
-    <div id="floating-whatsapp-container" className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-2">
+    <div id="floating-whatsapp-container" className="hidden sm:flex fixed bottom-6 right-6 z-40 flex-col items-end gap-2">
       
       {/* Help Bubble (Optional dismissible) */}
       {showBubble && (

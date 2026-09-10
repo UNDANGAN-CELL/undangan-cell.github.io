@@ -13,7 +13,7 @@ export const PromoBanner: React.FC<PromoBannerProps> = ({ promos, onSelectCatego
   if (!promos || promos.length === 0) return null;
 
   return (
-    <section id="promo-section" className="py-8 bg-stone-50">
+    <section id="promo-section" className="py-8 bg-[#f3efe6] border-b border-stone-200/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-4">
           

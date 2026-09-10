@@ -127,10 +127,10 @@ export const OrderFormModal: React.FC<OrderFormModalProps> = ({
     >
       <div
         id="order-form-modal-container"
-        className="relative bg-white w-full max-w-2xl rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-stone-200 flex flex-col max-h-[92vh]"
+        className="relative bg-[#faf8f4] w-full max-w-2xl rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-stone-200/90 flex flex-col max-h-[92vh]"
       >
         {/* Modal Header */}
-        <div className="p-4 sm:p-6 bg-stone-50 border-b border-stone-200 flex items-center justify-between">
+        <div className="p-4 sm:p-6 bg-[#f5f1e8] border-b border-stone-200/90 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold">
               <ShoppingBag className="w-5 h-5" />
@@ -154,43 +154,43 @@ export const OrderFormModal: React.FC<OrderFormModalProps> = ({
           </button>
         </div>
 
-        {/* Modal Body */}
-        <div className="overflow-y-auto p-4 sm:p-6 space-y-6">
-          
-          {/* Selected Product Card Banner */}
-          <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 flex items-center gap-3.5">
-            <img
-              src={product.images[0]}
-              alt={product.name}
-              className="w-14 h-14 sm:w-16 sm:h-16 rounded-lg object-cover border border-emerald-200 shrink-0"
-            />
-            <div className="min-w-0 flex-1">
-              <div className="flex items-center gap-2">
-                <span className="text-[10px] font-mono font-bold bg-white text-stone-800 px-2 py-0.5 rounded border border-emerald-200">
-                  {product.code}
-                </span>
-                <span className="text-xs text-emerald-800 font-semibold truncate">
-                  {product.category}
-                </span>
-              </div>
-              <h4 className="text-xs sm:text-sm font-bold text-stone-900 truncate">
-                {product.name}
-              </h4>
-              <div className="text-xs text-stone-600 font-medium">
-                Harga: {formatRupiah(product.price)} {product.priceType === 'paket' ? '/ paket' : '/ pcs'} • Min. {product.minimumOrder} pcs
+        {/* Modal Form Container */}
+        <form onSubmit={handleOrderSubmit} className="flex flex-col flex-1 min-h-0">
+          {/* Scrollable Modal Body */}
+          <div className="overflow-y-auto p-4 sm:p-6 space-y-5 flex-1">
+            
+            {/* Selected Product Card Banner */}
+            <div className="p-3.5 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200/80 flex items-center gap-3.5 shadow-2xs">
+              <img
+                src={product.images[0]}
+                alt={product.name}
+                className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl object-cover border border-emerald-200 shrink-0"
+              />
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] font-mono font-bold bg-white text-stone-800 px-2 py-0.5 rounded border border-emerald-200">
+                    {product.code}
+                  </span>
+                  <span className="text-xs text-emerald-800 font-bold truncate">
+                    {product.category}
+                  </span>
+                </div>
+                <h4 className="text-xs sm:text-sm font-bold text-stone-900 truncate mt-0.5">
+                  {product.name}
+                </h4>
+                <div className="text-xs text-stone-600 font-medium">
+                  Harga: <strong className="text-emerald-800">{formatRupiah(product.price)}</strong> {product.priceType === 'paket' ? '/ paket' : '/ pcs'} • Min. {product.minimumOrder} pcs
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Validation Error Message */}
-          {errorMessage && (
-            <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 flex items-center gap-2 text-xs font-semibold text-rose-700 animate-shake">
-              <AlertCircle className="w-4 h-4 shrink-0" />
-              <span>{errorMessage}</span>
-            </div>
-          )}
-
-          <form onSubmit={handleOrderSubmit} className="space-y-4">
+            {/* Validation Error Message */}
+            {errorMessage && (
+              <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 flex items-center gap-2 text-xs font-semibold text-rose-700 animate-shake">
+                <AlertCircle className="w-4 h-4 shrink-0" />
+                <span>{errorMessage}</span>
+              </div>
+            )}
             
             {/* Input Row 1: Jumlah Pesanan & Jenis Acara */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
@@ -403,23 +403,30 @@ export const OrderFormModal: React.FC<OrderFormModalProps> = ({
               </div>
             </div>
 
-            {/* Big WhatsApp Checkout Button */}
-            <div className="pt-2">
-              <button
-                id="btn-confirm-order-wa"
-                type="submit"
-                className="w-full flex items-center justify-center gap-2.5 py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-base shadow-lg hover:shadow-xl transition-all cursor-pointer"
-              >
-                <MessageCircle className="w-5 h-5" />
-                <span>💬 PESAN VIA WHATSAPP</span>
-              </button>
-              <p className="text-[11px] text-center text-stone-500 mt-2">
-                Pesan WhatsApp akan terisi otomatis ke nomor resmi <strong>{SITE_CONFIG.phoneDisplay}</strong>
-              </p>
+          </div>
+
+          {/* Sticky Modal Footer for instant checkout on mobile */}
+          <div className="p-3.5 sm:p-4 bg-white border-t border-stone-200/90 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 shadow-lg">
+            <div>
+              <span className="text-[11px] text-stone-500 block font-medium">Estimasi Biaya:</span>
+              <div className="flex items-baseline gap-1">
+                <span className="text-lg sm:text-xl font-black text-emerald-800 font-serif">
+                  {formatRupiah(estimatedTotal)}
+                </span>
+                <span className="text-[11px] text-stone-500 font-medium">({quantity} pcs)</span>
+              </div>
             </div>
 
-          </form>
-        </div>
+            <button
+              id="btn-confirm-order-wa"
+              type="submit"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 via-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 active:scale-98 text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition cursor-pointer min-h-[48px]"
+            >
+              <MessageCircle className="w-5 h-5 fill-white/20" />
+              <span>PESAN VIA WHATSAPP</span>
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

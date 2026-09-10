@@ -4,7 +4,7 @@ import { TESTIMONIALS } from '../data/testimonials';
 
 export const TestimonialsSection: React.FC = () => {
   return (
-    <section id="testimoni-section" className="py-16 bg-stone-50 border-t border-stone-200/80">
+    <section id="testimoni-section" className="py-16 bg-[#f4f0e6] border-t border-stone-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -26,7 +26,7 @@ export const TestimonialsSection: React.FC = () => {
           {TESTIMONIALS.map((t) => (
             <div
               key={t.id}
-              className="bg-white rounded-2xl p-6 border border-stone-200 shadow-xs hover:shadow-md transition flex flex-col justify-between space-y-4"
+              className="bg-[#faf8f4] rounded-2xl p-6 border border-stone-200/90 shadow-xs hover:shadow-md transition flex flex-col justify-between space-y-4"
             >
               <div className="space-y-3">
                 {/* Rating Stars */}

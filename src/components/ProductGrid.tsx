@@ -88,7 +88,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
   };
 
   return (
-    <section id="katalog-section" className="py-16 bg-stone-100/60">
+    <section id="katalog-section" className="py-16 bg-[#f4f0e6] border-b border-stone-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
@@ -105,7 +105,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
         </div>
 
         {/* Search Bar & Filter Bar */}
-        <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-stone-200/80 mb-8 space-y-4">
+        <div className="bg-[#faf8f4] rounded-2xl p-4 sm:p-5 shadow-xs border border-stone-200/90 mb-8 space-y-4">
           
           {/* Top Row: Search Input & Sort Dropdown */}
           <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">
@@ -178,14 +178,14 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
           </div>
 
           {/* Bottom Row: Category Horizontal Scroll Tabs */}
-          <div className="pt-2 border-t border-stone-100 overflow-x-auto no-scrollbar flex items-center gap-1.5 pb-1">
+          <div className="pt-2.5 border-t border-stone-100 overflow-x-auto no-scrollbar flex items-center gap-2 pb-1">
             <button
               id="filter-cat-semua"
               onClick={() => onCategoryChange('Semua')}
-              className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg shrink-0 transition cursor-pointer ${
+              className={`px-4 py-2 text-xs font-bold rounded-full shrink-0 transition-all cursor-pointer ${
                 selectedCategory === 'Semua'
-                  ? 'bg-emerald-700 text-white shadow-xs'
-                  : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+                  ? 'bg-gradient-to-r from-emerald-700 to-teal-700 text-white shadow-sm'
+                  : 'bg-stone-100 text-stone-700 hover:bg-emerald-50 hover:text-emerald-800'
               }`}
             >
               Semua ({products.length})
@@ -196,10 +196,10 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
                 key={cat.id}
                 id={`filter-cat-${cat.id.toLowerCase().replace(/\s+/g, '-')}`}
                 onClick={() => onCategoryChange(cat.id)}
-                className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg shrink-0 transition cursor-pointer ${
+                className={`px-4 py-2 text-xs font-bold rounded-full shrink-0 transition-all cursor-pointer ${
                   selectedCategory === cat.id
-                    ? 'bg-emerald-700 text-white shadow-xs'
-                    : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+                    ? 'bg-gradient-to-r from-emerald-700 to-teal-700 text-white shadow-sm'
+                    : 'bg-stone-100 text-stone-700 hover:bg-emerald-50 hover:text-emerald-800'
                 }`}
               >
                 {cat.title}

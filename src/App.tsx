@@ -18,6 +18,7 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { HowToOrderSection } from './components/HowToOrderSection';
 import { AboutSection } from './components/AboutSection';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { MobileBottomNav } from './components/MobileBottomNav';
 import { Footer } from './components/Footer';
 
 import { PRODUCTS } from './data/products';
@@ -95,7 +96,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-stone-50 text-stone-900 font-sans selection:bg-emerald-100 selection:text-emerald-900">
+    <div className="min-h-screen flex flex-col bg-[#f7f5f0] text-stone-900 font-sans selection:bg-emerald-100 selection:text-emerald-900 pb-16 sm:pb-0">
       
       {/* 1. Navbar */}
       <Navbar onNavigate={handleNavigate} activeSection={activeSection} />
@@ -153,8 +154,11 @@ export default function App() {
       {/* 12. Footer */}
       <Footer onNavigate={handleNavigate} />
 
-      {/* 13. Floating WhatsApp CTA */}
+      {/* 13. Desktop Floating WhatsApp CTA */}
       <FloatingWhatsApp />
+
+      {/* 14. Mobile Sticky Bottom Navigation */}
+      <MobileBottomNav activeSection={activeSection} onNavigate={handleNavigate} />
 
       {/* Modals */}
       <ProductDetailModal
