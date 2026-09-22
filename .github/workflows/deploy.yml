@@ -24,7 +24,7 @@ jobs:
           node-version: 20
 
 
-      - run: npm ci
+      - run: npm install
       - run: npm run build
 
       # Pastikan custom domain (rumahijo.my.id) ikut ter-publish
