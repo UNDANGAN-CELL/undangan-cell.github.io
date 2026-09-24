@@ -98,23 +98,45 @@ export function buildCalculatorMessage(params: {
   return msg;
 }
 
+export type DesignStatus = 'siap' | 'referensi' | 'konsultasi';
+
 /**
- * Format pesan kirim desain sendiri
+ * Format pesan pesanan custom (desain sendiri / referensi / konsultasi).
+ * File tidak diunggah lewat website; pemesan melampirkannya langsung di chat.
  */
-export function buildUploadDesignMessage(params: {
-  fileName?: string;
+export function buildCustomOrderMessage(params: {
+  designStatus: DesignStatus;
   productType: string;
-  quantity: number | string;
+  quantity?: string | number;
+  deadline?: string; // format yyyy-mm-dd dari input tanggal
   customerName?: string;
   notes?: string;
 }): string {
-  let msg = `Halo Admin ${SITE_CONFIG.brandName}, saya punya desain sendiri yang ingin dicetak:\n\n`;
-  msg += `Kategori / Produk: ${params.productType}\n`;
-  msg += `Rencana Jumlah: ${params.quantity} pcs\n`;
-  if (params.fileName) msg += `File Desain: ${params.fileName}\n`;
+  const statusLabel: Record<DesignStatus, string> = {
+    siap: 'Sudah punya desain jadi',
+    referensi: 'Punya ide / referensi, minta dibuatkan desain',
+    konsultasi: 'Belum ada desain, ingin konsultasi dulu',
+  };
+  const closing: Record<DesignStatus, string> = {
+    siap: 'Saya akan melampirkan file desain di chat ini sebagai Dokumen. Mohon dicek apakah sudah sesuai untuk dicetak. Terima kasih!',
+    referensi: 'Saya akan mengirim referensi dan teks yang ingin dicantumkan di chat ini. Terima kasih!',
+    konsultasi: 'Mohon dibantu diskusi kebutuhan dan pilihan produknya. Terima kasih!',
+  };
+
+  let msg = `Halo Admin ${SITE_CONFIG.brandName}, saya ingin pesan custom:\n\n`;
+  msg += `Produk: ${params.productType}\n`;
+  msg += `Kondisi desain: ${statusLabel[params.designStatus]}\n`;
+  if (params.quantity) msg += `Rencana jumlah: ${params.quantity} pcs\n`;
+  if (params.deadline) {
+    const d = new Date(`${params.deadline}T00:00:00`);
+    const formatted = isNaN(d.getTime())
+      ? params.deadline
+      : d.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+    msg += `Dibutuhkan tanggal: ${formatted}\n`;
+  }
   if (params.customerName) msg += `Nama: ${params.customerName}\n`;
-  if (params.notes) msg += `Catatan Desain: ${params.notes}\n`;
-  msg += `\nSaya akan melampirkan file desain asli di chat WhatsApp ini. Mohon dicek apakah resolusinya sudah sesuai untuk dicetak. Terima kasih!`;
+  if (params.notes) msg += `Catatan: ${params.notes}\n`;
+  msg += `\n${closing[params.designStatus]}`;
   return msg;
 }
 
