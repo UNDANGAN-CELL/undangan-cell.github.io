@@ -1468,7 +1468,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Cup',
     price: 550,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Cup plastik bening ukuran 12 oz, cocok untuk minuman dingin dan kebutuhan usaha.',
     images: [
       '/images/cup/plastic-cup-PL-12-12oz.jpg',
@@ -1486,7 +1486,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Cup',
     price: 550,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Cup plastik bening ukuran 16 oz, cocok untuk minuman dingin dan kebutuhan usaha.',
     images: [
       '/images/cup/plastic-cup-PL-16-16oz.jpg',
@@ -1504,7 +1504,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Cup',
     price: 580,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Cup plastik bening ukuran 18 oz.',
     images: [
       '/images/cup/plastic-cup-PL-18-18oz.jpg',
@@ -1522,7 +1522,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Cup',
     price: 610,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Cup plastik bening ukuran 22 oz.',
     images: [
       '/images/cup/plastic-cup-PL-22-22oz.jpg',
@@ -1540,7 +1540,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Cup',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Cup plastik bening ukuran 24 oz. Harga dikonfirmasi via WhatsApp.',
     images: [
       '/images/cup/plastic-cup-PL-24-24oz.jpg',
@@ -1558,7 +1558,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Cup',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Cup plastik bening ukuran 30 oz. Harga dikonfirmasi via WhatsApp.',
     images: [
       '/images/cup/plastic-cup-PL-30-30oz.jpg',
@@ -1576,7 +1576,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Cup',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Paper cup ukuran 8 oz. Harga dikonfirmasi via WhatsApp.',
     images: [
       '/images/cup/paper-cup-PC-08-8oz.jpg',
@@ -1594,7 +1594,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Cup',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Paper cup ukuran 12 oz. Harga dikonfirmasi via WhatsApp.',
     images: [
       '/images/cup/paper-cup-PC-12-12oz.jpg',
@@ -1612,7 +1612,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Cup',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Paper cup ukuran 16 oz. Harga dikonfirmasi via WhatsApp.',
     images: [
       '/images/cup/paper-cup-PC-16-16oz.jpg',
@@ -1630,7 +1630,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Cup',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Paper cup ukuran 22 oz. Harga dikonfirmasi via WhatsApp.',
     images: [
       '/images/cup/paper-cup-PC-22-22oz.jpg',
@@ -1648,7 +1648,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Plastik Kemasan',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Plastik kantong ukuran 15 × 27 cm. Harga sablon dikonfirmasi via WhatsApp.',
     images: [
       '/images/kemasan/plastik-kantong-KP-15-15x27cm.jpg',
@@ -1666,7 +1666,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Plastik Kemasan',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Plastik kantong ukuran 24 × 35 cm. Harga sablon dikonfirmasi via WhatsApp.',
     images: [
       '/images/kemasan/plastik-kantong-KP-24-24x35cm.jpg',
@@ -1684,7 +1684,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Plastik Kemasan',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Plastik kantong ukuran 30 × 40 cm. Harga sablon dikonfirmasi via WhatsApp.',
     images: [
       '/images/kemasan/plastik-kantong-KP-30-30x40cm.jpg',
@@ -1702,7 +1702,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Plastik Kemasan',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Plastik olshop ukuran 25 × 35 cm. Harga sablon dikonfirmasi via WhatsApp.',
     images: [
       '/images/kemasan/plastik-olshop-OP-25-25x35cm.jpg',
@@ -1720,7 +1720,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Plastik Kemasan',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Plastik olshop ukuran 30 × 40 cm. Harga sablon dikonfirmasi via WhatsApp.',
     images: [
       '/images/kemasan/plastik-olshop-OP-30-30x40cm.jpg',
@@ -1738,7 +1738,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Plastik Kemasan',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Plastik klip bening ukuran 5 × 8 cm. Harga dikonfirmasi via WhatsApp.',
     images: [
       '/images/kemasan/plastik-clip-Tiny-5x8cm.jpg',
@@ -1756,7 +1756,7 @@ export const PRODUCTS: Product[] = [
     category: 'Sablon Plastik Kemasan',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 1000,
     description: 'Plastik klip bening ukuran 7 × 10 cm. Harga dikonfirmasi via WhatsApp.',
     images: [
       '/images/kemasan/plastik-clip-Very-Small-7x10cm.jpg',
@@ -1774,7 +1774,7 @@ export const PRODUCTS: Product[] = [
     category: 'Stiker Label',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 500,
     description: 'Bahan stiker HVS untuk label yang dapat ditulis.',
     images: [
       '/images/stiker/bahan-stiker-HVS.jpg',
@@ -1792,7 +1792,7 @@ export const PRODUCTS: Product[] = [
     category: 'Stiker Label',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 500,
     description: 'Stiker bentuk bulat untuk label produk dan branding.',
     images: [
       '/images/stiker/stiker-bulat-SK-B.jpg',
@@ -1810,7 +1810,7 @@ export const PRODUCTS: Product[] = [
     category: 'Stiker Label',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 500,
     description: 'Stiker custom sesuai bentuk dan kebutuhan desain.',
     images: [
       '/images/stiker/stiker-custom-SK-C.jpg',
@@ -1828,7 +1828,7 @@ export const PRODUCTS: Product[] = [
     category: 'Stiker Label',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 500,
     description: 'Stiker bentuk kotak untuk label produk dan kemasan.',
     images: [
       '/images/stiker/stiker-kotak-SK-K.jpg',
@@ -1846,7 +1846,7 @@ export const PRODUCTS: Product[] = [
     category: 'Stiker Label',
     price: 0,
     priceType: 'per_pcs',
-    minimumOrder: 50,
+    minimumOrder: 500,
     description: 'Pilihan bentuk stiker custom sesuai kebutuhan.',
     images: [
       '/images/stiker/stiker-SK-KE-shape-options.jpg',
