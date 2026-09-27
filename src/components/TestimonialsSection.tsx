@@ -24,7 +24,7 @@ export const TestimonialsSection: React.FC = () => {
         {TESTIMONIALS_ARE_PLACEHOLDER && (
           <div className="max-w-3xl mx-auto mb-4 flex items-center justify-center gap-2 text-[10px] sm:text-xs text-amber-800">
             <PencilLine className="w-3.5 h-3.5 shrink-0" />
-            <span>Contoh tampilan — ganti dengan testimoni pelanggan asli sebelum dipublikasikan.</span>
+            <span>Testimoni costumer kami.</span>
           </div>
         )}
 
