@@ -27,7 +27,7 @@ export const TESTIMONIALS: Testimonial[] = [
     event: 'Pernikahan',
     product: 'Undangan Pernikahan',
     rating: 5,
-    comment: '[Tulis ulang kesan pelanggan di sini. Contoh struktur: apa yang dipesan, bagaimana proses desainnya, dan bagaimana hasil cetaknya.]',
+    comment: '[hasilnya top markotop.]',
     date: '[2026]',
   },
   {
@@ -37,7 +37,7 @@ export const TESTIMONIALS: Testimonial[] = [
     event: 'Khitanan',
     product: 'Undangan Sunatan',
     rating: 5,
-    comment: '[Tulis ulang kesan pelanggan di sini. Sebutkan hal konkret seperti kecepatan pengerjaan atau revisi desain.]',
+    comment: '[desainnya keren.]',
     date: '[2026]',
   },
   {
@@ -47,7 +47,7 @@ export const TESTIMONIALS: Testimonial[] = [
     event: 'Pernikahan',
     product: 'Undangan Pernikahan',
     rating: 5,
-    comment: '[Tulis ulang kesan pelanggan di sini. Hindari kalimat berlebihan; kesan yang wajar justru lebih dipercaya.]',
+    comment: '[keren hasilnya.]',
     date: '[2026]',
   },
   {
@@ -57,7 +57,7 @@ export const TESTIMONIALS: Testimonial[] = [
     event: ' Pernikahan',
     product: 'Undangan Pernikahan',
     rating: 5,
-    comment: '[Tulis ulang kesan pelanggan di sini.]',
+    comment: '[rekomendasi banget.]',
     date: '[2026]',
   },
 ];
