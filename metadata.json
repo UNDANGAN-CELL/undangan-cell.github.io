@@ -1,6 +1,0 @@
-{
-  "name": "Rumah Ijo — Percetakan & Sablon",
-  "description": "Pesan undangan, souvenir, percetakan, dan sablon untuk berbagai acara. Lihat katalog dan pesan langsung melalui WhatsApp.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
