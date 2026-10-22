@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Pernikahan - Ahmad & Fatimah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --emerald: #0E5A48;
+    --emerald-dark: #093D31;
+    --emerald-soft: #DDEDE6;
+    --mint: #F4FAF7;
+    --ink: #1E2B27;
+    --muted: #5C6E67;
+    --line: #9CC7B6;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: #DCE8E2;
+    font-family: 'Poppins', sans-serif;
+    color: var(--ink);
+  }
+
+  .wrap {
+    max-width: 480px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: var(--mint);
+    position: relative;
+    overflow-x: hidden;
+    box-shadow: 0 0 30px rgba(0,0,0,.08);
+    padding-bottom: 110px;
+  }
+
+  .arab, h1, h2, h3 {
+    font-family: 'Scheherazade New', serif;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  /* ---------- COVER (Fade & Scale Out) ---------- */
+  #cover {
+    position: fixed;
+    inset: 0;
+    max-width: 480px;
+    margin: 0 auto;
+    z-index: 100;
+    background: var(--emerald);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 24px;
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  #cover.open {
+    opacity: 0;
+    transform: scale(1.15);
+    pointer-events: none;
+  }
+  #cover .frame-cover {
+    width: 260px;
+    height: 340px;
+    border: 1px solid rgba(255,255,255,.5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+  }
+  #cover .frame-cover::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(255,255,255,.25);
+  }
+  #cover .small { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; opacity: .85; }
+  #cover .names { font-family: 'Scheherazade New', serif; font-size: 40px; margin: 16px 0 8px; }
+  #cover .guest { font-size: 13px; margin-top: 18px; opacity: .9; }
+  #cover .guest strong { display: block; font-size: 16px; margin-top: 4px; font-weight: 600; }
+
+  .btn-open {
+    margin-top: 30px;
+    padding: 12px 30px;
+    background: #fff;
+    color: var(--emerald);
+    border: none;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform .3s ease;
+  }
+  .btn-open:hover { transform: translateY(-2px); }
+
+  /* ---------- GEOMETRIC LINE BORDER ---------- */
+  .geo-border {
+    position: relative;
+    padding: 56px 24px;
+    text-align: center;
+  }
+  .geo-border::before {
+    content: "";
+    position: absolute;
+    inset: 16px;
+    border: 1px solid var(--line);
+    pointer-events: none;
+  }
+  .geo-border::after {
+    content: "";
+    position: absolute;
+    inset: 22px;
+    border: 1px dashed var(--line);
+    opacity: .6;
+    pointer-events: none;
+  }
+  .geo-svg {
+    width: 120px;
+    height: 24px;
+    display: block;
+    margin: 0 auto 18px;
+    color: var(--emerald);
+  }
+
+  section.block { padding: 56px 24px; text-align: center; position: relative; }
+
+  .bismillah {
+    font-family: 'Scheherazade New', serif;
+    font-size: 26px;
+    color: var(--emerald);
+    margin-bottom: 14px;
+  }
+  .label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--emerald);
+    font-weight: 500;
+  }
+  h2 { font-size: 32px; color: var(--emerald-dark); margin-top: 8px; }
+  .muted { font-size: 13px; line-height: 1.8; color: var(--muted); }
+
+  /* Hero */
+  .hero-photo {
+    width: 240px;
+    height: 300px;
+    margin: 0 auto;
+    padding: 8px;
+    border: 1px solid var(--line);
+    position: relative;
+  }
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero h1 { font-size: 42px; margin-top: 24px; color: var(--emerald-dark); }
+  .hero .date {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    color: var(--emerald);
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.show { opacity: 1; transform: none; }
+
+  /* Mempelai */
+  .couple { display: flex; flex-direction: column; gap: 36px; margin-top: 24px; }
+  .person img {
+    width: 140px;
+    height: 170px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    padding: 6px;
+    background: #fff;
+    display: block;
+    margin: 0 auto;
+  }
+  .person h3 { font-size: 26px; margin-top: 14px; color: var(--emerald-dark); }
+  .person p { margin: 6px 0 0; font-size: 12px; line-height: 1.7; color: var(--muted); }
+  .and {
+    font-family: 'Scheherazade New', serif;
+    font-size: 34px;
+    color: var(--emerald);
+  }
+
+  /* Countdown */
+  .countdown {
+    display: flex;
+    justify-content: center;
+    margin-top: 22px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+  }
+  .cd-item { flex: 1; border-right: 1px solid var(--line); }
+  .cd-item:last-child { border-right: none; }
+  .cd-item b { display: block; font-size: 26px; font-weight: 600; color: var(--emerald-dark); font-variant-numeric: tabular-nums; }
+  .cd-item span { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+
+  /* Acara */
+  .acara-item {
+    margin-top: 22px;
+    padding: 22px 18px;
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+  .acara-item h3 { font-size: 24px; color: var(--emerald); }
+  .acara-item p { margin: 6px 0; font-size: 13px; color: var(--muted); }
+  .btn-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 9px 18px;
+    border: 1px solid var(--emerald);
+    color: var(--emerald);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: .5px;
+    transition: all .3s ease;
+  }
+  .btn-link:hover { background: var(--emerald); color: #fff; }
+
+  /* Galeri Carousel Horizontal */
+  #galeri { padding: 56px 0; text-align: center; }
+  #galeri h2 { padding: 0 24px; }
+  .carousel {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 24px 24px 16px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .carousel::-webkit-scrollbar { display: none; }
+  .carousel img {
+    flex: 0 0 75%;
+    height: 340px;
+    object-fit: cover;
+    scroll-snap-align: center;
+    border: 1px solid var(--line);
+    padding: 6px;
+    background: #fff;
+    transition: transform .4s ease;
+  }
+  .carousel img:first-child { margin-left: 0; }
+  .swipe-hint { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+
+  /* Amplop */
+  .amplop-box {
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 26px 20px;
+  }
+  .amplop-box .bank { font-size: 11px; letter-spacing: 2px; color: var(--emerald); text-transform: uppercase; font-weight: 500; }
+  .amplop-box .no { font-size: 22px; font-weight: 600; letter-spacing: 2px; margin: 10px 0 4px; color: var(--emerald-dark); }
+  .amplop-box .an { font-size: 12px; color: var(--muted); }
+  .amplop-box img {
+    width: 170px;
+    height: 170px;
+    margin-top: 18px;
+    border: 1px solid var(--line);
+    padding: 6px;
+  }
+  .btn-copy {
+    margin-top: 16px;
+    padding: 11px 22px;
+    border: none;
+    background: var(--emerald);
+    color: #fff;
+    font-family: inherit;
+    font-size: 12px;
+    letter-spacing: .5px;
+    cursor: pointer;
+    transition: background .3s ease;
+  }
+  .btn-copy:hover { background: var(--emerald-dark); }
+
+  /* RSVP */
+  .rsvp form { display: flex; flex-direction: column; gap: 14px; text-align: left; margin-top: 18px; }
+  .rsvp label { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--emerald); font-weight: 500; }
+  .rsvp input, .rsvp select, .rsvp textarea {
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px 12px;
+    border: 1px solid var(--line);
+    background: #fff;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--ink);
+    border-radius: 0;
+    outline: none;
+    transition: border-color .3s ease;
+  }
+  .rsvp input:focus, .rsvp select:focus, .rsvp textarea:focus { border-color: var(--emerald); }
+  .rsvp textarea { min-height: 90px; resize: vertical; }
+  .rsvp button {
+    padding: 14px;
+    border: none;
+    background: var(--emerald-dark);
+    color: #fff;
+    font-family: inherit;
+    font-size: 13px;
+    letter-spacing: .5px;
+    cursor: pointer;
+    margin-top: 4px;
+  }
+
+  footer { text-align: center; padding: 34px 20px 10px; font-size: 12px; color: var(--muted); }
+  footer strong { font-family: 'Scheherazade New', serif; font-size: 22px; color: var(--emerald-dark); display: block; margin-top: 6px; }
+
+  /* Music Button */
+  #musicBtn {
+    position: fixed;
+    top: 16px;
+    right: calc(50% - 224px);
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--emerald);
+    background: #fff;
+    color: var(--emerald);
+    font-size: 16px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 50;
+  }
+  #musicBtn.active { display: flex; }
+  #musicBtn.playing { animation: spin 6s linear infinite; }
+
+  /* Bottom Nav */
+  #bottomNav {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 440px;
+    display: none;
+    justify-content: space-around;
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 10px 4px;
+    z-index: 60;
+    box-shadow: 0 8px 24px rgba(14,90,72,.12);
+  }
+  #bottomNav.active { display: flex; }
+  #bottomNav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 4px 8px;
+    transition: color .3s ease;
+  }
+  #bottomNav a:hover, #bottomNav a.current { color: var(--emerald); }
+  #bottomNav a span.ic { font-size: 15px; }
+
+  /* Toast */
+  #toast {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%, 20px);
+    background: var(--emerald-dark);
+    color: #fff;
+    padding: 12px 22px;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s ease;
+    z-index: 200;
+    white-space: nowrap;
+  }
+  #toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div id="cover">
+  <div class="frame-cover">
+    <div class="small">Undangan Pernikahan</div>
+    <div class="names">Ahmad &amp; Fatimah</div>
+    <div class="guest">Kepada Yth. Bapak/Ibu/Saudara/i<strong id="guestCover">Tamu Undangan</strong></div>
+  </div>
+  <button class="btn-open" id="openBtn">Buka Undangan</button>
+</div>
+
+<!-- Audio -->
+<audio id="bgm" loop preload="none" src="musik.mp3"></audio>
+<button id="musicBtn" aria-label="Musik">&#9835;</button>
+
+<div class="wrap" id="top">
+
+  <!-- BERANDA -->
+  <section id="beranda" class="block hero">
+    <div class="bismillah reveal">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+    <div class="hero-photo reveal">
+      <img width="400" height="520" data-dummy="Foto Cover" alt="Foto cover">
+    </div>
+    <h1 class="reveal">Ahmad &amp; Fatimah</h1>
+    <div class="date reveal">Sabtu, 12 Desember 2026</div>
+    <p class="muted reveal" style="margin-top:16px">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir di acara pernikahan kami.</p>
+    <p class="reveal" style="margin-top:12px;font-size:13px">Kepada Yth. <strong id="guestHero">Tamu Undangan</strong></p>
+  </section>
+
+  <!-- MEMPELAI -->
+  <div class="geo-border" id="mempelai">
+    <svg class="geo-svg" viewBox="0 0 120 24" fill="none" stroke="currentColor" stroke-width="1">
+      <path d="M0 12 H40 M80 12 H120"/>
+      <path d="M50 12 L60 2 L70 12 L60 22 Z"/>
+      <path d="M55 12 L60 7 L65 12 L60 17 Z"/>
+    </svg>
+    <div class="label reveal">Mempelai</div>
+    <div class="couple">
+      <div class="person reveal">
+        <img width="300" height="360" data-dummy="Foto Mempelai Pria" alt="Mempelai pria">
+        <h3>Ahmad Hidayat, S.T.</h3>
+        <p>Putra dari Bapak Hasan &amp; Ibu Siti Aminah</p>
+      </div>
+      <div class="and reveal">&amp;</div>
+      <div class="person reveal">
+        <img width="300" height="360" data-dummy="Foto Mempelai Wanita" alt="Mempelai wanita">
+        <h3>Fatimah Azzahra, S.Pd.</h3>
+        <p>Putri dari Bapak Yusuf &amp; Ibu Nur Hasanah</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACARA -->
+  <section class="block" id="acara">
+    <div class="label reveal">Hitung Mundur</div>
+    <h2 class="reveal">Menuju Hari Bahagia</h2>
+    <div class="countdown reveal">
+      <div class="cd-item"><b id="d">00</b><span>Hari</span></div>
+      <div class="cd-item"><b id="h">00</b><span>Jam</span></div>
+      <div class="cd-item"><b id="m">00</b><span>Menit</span></div>
+      <div class="cd-item"><b id="s">00</b><span>Detik</span></div>
+    </div>
+
+    <div class="acara-item reveal">
+      <h3>Akad Nikah</h3>
+      <p>Sabtu, 12 Desember 2026</p>
+      <p>Pukul 08.00 WIB - Selesai</p>
+      <p>Masjid Al-Ikhlas, Jl. Contoh No. 12, Semarang</p>
+      <a class="btn-link" href="#" onclick="return false;">Lihat Lokasi</a>
+    </div>
+
+    <div class="acara-item reveal">
+      <h3>Resepsi</h3>
+      <p>Sabtu, 12 Desember 2026</p>
+      <p>Pukul 11.00 - 14.00 WIB</p>
+      <p>Gedung Serbaguna Permata, Jl. Contoh No. 45, Semarang</p>
+      <a class="btn-link" href="#" onclick="return false;">Lihat Lokasi</a>
+    </div>
+  </section>
+
+  <!-- GALERI CAROUSEL -->
+  <section id="galeri">
+    <div class="label reveal">Galeri</div>
+    <h2 class="reveal">Momen Kami</h2>
+    <div class="carousel reveal">
+      <img width="400" height="500" data-dummy="Foto Galeri 01" alt="Galeri 1">
+      <img width="400" height="500" data-dummy="Foto Galeri 02" alt="Galeri 2">
+      <img width="400" height="500" data-dummy="Foto Galeri 03" alt="Galeri 3">
+      <img width="400" height="500" data-dummy="Foto Galeri 04" alt="Galeri 4">
+      <img width="400" height="500" data-dummy="Foto Galeri 05" alt="Galeri 5">
+    </div>
+    <div class="swipe-hint">Geser untuk melihat &rarr;</div>
+  </section>
+
+  <!-- AMPLOP DIGITAL -->
+  <section class="block" id="amplop">
+    <div class="label reveal">Amplop Digital</div>
+    <p class="muted reveal" style="margin-top:12px">Doa restu Anda adalah hadiah terbaik. Bagi yang ingin memberikan tanda kasih, dapat melalui:</p>
+    <div class="amplop-box reveal">
+      <div class="bank">Bank BCA</div>
+      <div class="no" id="rekening">1234 5678 90</div>
+      <div class="an">a.n. Ahmad Hidayat</div>
+      <button class="btn-copy" id="copyBtn">Salin Nomor Rekening</button>
+      <div style="margin-top:20px;font-size:11px;letter-spacing:2px;color:var(--emerald)">ATAU SCAN QRIS</div>
+      <img width="300" height="300" data-dummy="QRIS Dummy" alt="QRIS">
+    </div>
+  </section>
+
+  <!-- BUKU TAMU / RSVP -->
+  <section class="block rsvp" id="ucapan">
+    <div class="label reveal">Buku Tamu</div>
+    <h2 class="reveal">Doa &amp; Konfirmasi</h2>
+    <p class="muted reveal">Konfirmasi kehadiran dan titipkan doa terbaik untuk kami.</p>
+    <form id="rsvpForm" class="reveal">
+      <div>
+        <label for="nama">Nama Lengkap</label>
+        <input id="nama" type="text" required placeholder="Tulis nama Anda">
+      </div>
+      <div>
+        <label for="hadir">Kehadiran</label>
+        <select id="hadir">
+          <option value="Hadir">Insya Allah Hadir</option>
+          <option value="Tidak Hadir">Maaf, Tidak Dapat Hadir</option>
+        </select>
+      </div>
+      <div>
+        <label for="pesan">Doa &amp; Ucapan</label>
+        <textarea id="pesan" placeholder="Tulis doa dan ucapan Anda..."></textarea>
+      </div>
+      <button type="submit">Kirim via WhatsApp</button>
+    </form>
+  </section>
+
+  <footer>
+    Wassalamu'alaikum Warahmatullahi Wabarakatuh
+    <strong>Ahmad &amp; Fatimah</strong>
+  </footer>
+</div>
+
+<!-- Floating Bottom Navigation -->
+<nav id="bottomNav">
+  <a href="#beranda"><span class="ic">&#9750;</span>Beranda</a>
+  <a href="#mempelai"><span class="ic">&#9825;</span>Mempelai</a>
+  <a href="#acara"><span class="ic">&#9737;</span>Acara</a>
+  <a href="#galeri"><span class="ic">&#10064;</span>Galeri</a>
+  <a href="#ucapan"><span class="ic">&#9998;</span>Ucapan</a>
+</nav>
+
+<div id="toast"></div>
+
+<script>
+  // 1. Nama tamu dari URL (?to=Nama+Tamu)
+  const params = new URLSearchParams(window.location.search);
+  const guestName = (params.get('to') || '').trim() || 'Tamu Undangan';
+  ['guestCover', 'guestHero'].forEach(id => {
+    document.getElementById(id).textContent = guestName;
+  });
+
+  // 2. Dummy SVG internal (tanpa URL eksternal)
+  function dummy(label, w, h, bg = '#DDEDE6') {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
+      <rect width="100%" height="100%" fill="${bg}"/>
+      <rect x="10" y="10" width="${w - 20}" height="${h - 20}" fill="none" stroke="#0E5A48" stroke-width="1"/>
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="${Math.max(14, Math.round(w / 14))}" fill="#0E5A48">${label} (${w}x${h})</text>
+    </svg>`;
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  }
+  document.querySelectorAll('img[data-dummy]').forEach(img => {
+    img.src = dummy(img.dataset.dummy, img.getAttribute('width'), img.getAttribute('height'));
+  });
+
+  // 3. Toast
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+  }
+
+  // 4. Cover + musik
+  const cover = document.getElementById('cover');
+  const bgm = document.getElementById('bgm');
+  const musicBtn = document.getElementById('musicBtn');
+  const bottomNav = document.getElementById('bottomNav');
+  let isPlaying = false;
+
+  function setPlaying(state) {
+    isPlaying = state;
+    musicBtn.classList.toggle('playing', state);
+  }
+
+  async function playMusic() {
+    try {
+      await bgm.play();
+      setPlaying(true);
+    } catch (e) {
+      setPlaying(false);
+    }
+  }
+
+  musicBtn.addEventListener('click', () => {
+    if (isPlaying) { bgm.pause(); setPlaying(false); }
+    else { playMusic(); }
+  });
+
+  document.getElementById('openBtn').addEventListener('click', () => {
+    cover.classList.add('open');
+    musicBtn.classList.add('active');
+    bottomNav.classList.add('active');
+    playMusic();
+    setTimeout(() => { cover.style.display = 'none'; }, 1000);
+    revealOnScroll();
+  });
+
+  // 5. Reveal saat scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+  }, { threshold: 0.15 });
+
+  function revealOnScroll() {
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }
+
+  // 6. Highlight menu aktif
+  const navLinks = document.querySelectorAll('#bottomNav a');
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.toggle('current', a.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { threshold: 0.5 });
+  ['beranda', 'mempelai', 'acara', 'galeri', 'ucapan'].forEach(id => {
+    sectionObserver.observe(document.getElementById(id));
+  });
+
+  // 7. Countdown
+  const target = new Date('2026-12-12T08:00:00+07:00').getTime();
+  const pad = n => String(n).padStart(2, '0');
+  function tick() {
+    const diff = Math.max(0, target - Date.now());
+    document.getElementById('d').textContent = pad(Math.floor(diff / 86400000));
+    document.getElementById('h').textContent = pad(Math.floor(diff / 3600000) % 24);
+    document.getElementById('m').textContent = pad(Math.floor(diff / 60000) % 60);
+    document.getElementById('s').textContent = pad(Math.floor(diff / 1000) % 60);
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // 8. Salin rekening
+  document.getElementById('copyBtn').addEventListener('click', async () => {
+    const no = document.getElementById('rekening').textContent.replace(/\s/g, '');
+    try {
+      await navigator.clipboard.writeText(no);
+      showToast('Nomor rekening berhasil disalin');
+    } catch (err) {
+      showToast('Gagal menyalin, silakan salin manual');
+    }
+  });
+
+  // 9. RSVP -> WhatsApp
+  const WA_NUMBER = '6281234567890'; // ganti dengan nomor WhatsApp penerima (format 62...)
+  document.getElementById('rsvpForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const nama = document.getElementById('nama').value.trim();
+    const hadir = document.getElementById('hadir').value;
+    const pesan = document.getElementById('pesan').value.trim();
+    const text =
+      `Assalamu'alaikum, saya ${nama}.\n` +
+      `Konfirmasi: ${hadir}\n` +
+      (pesan ? `Doa & Ucapan: ${pesan}` : '');
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+    showToast('Terima kasih, ucapan Anda terkirim');
+    e.target.reset();
+  });
+</script>
+</body>
+</html>
