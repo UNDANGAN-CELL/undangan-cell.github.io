@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Undangan Digital Cream Arch — Rumah Ijo" />
+<meta property="og:description" content="Contoh undangan online. Nama, tanggal, foto, dan musik disesuaikan untuk acara Anda. Pesan lewat WhatsApp di Rumah Ijo." />
+<meta property="og:url" content="https://rumahijo.my.id/undangan-digital/demo/ud-015.html" />
+<meta property="og:image" content="https://rumahijo.my.id/images/undangan-digital/ud-015-cover.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Digital Cream Arch — Rumah Ijo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #E9D8BE;
+    --sand-light: #F6EEE0;
+    --sand-dark: #C8A97E;
+    --terra: #B5654A;
+    --terra-dark: #7E3F2B;
+    --ink: #3B2A1E;
+    --muted: #7A6553;
+    --paper: #FBF7F0;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: #D9C7A8;
+    font-family: 'Outfit', sans-serif;
+    color: var(--ink);
+  }
+
+  .wrap {
+    max-width: 480px;
+    min-height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    overflow-x: hidden;
+    padding-bottom: 110px;
+    /* Terrazzo: serpihan batu halus di atas latar pasir */
+    background-color: var(--sand-light);
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(181,101,74,.18) 0 2px, transparent 3px),
+      radial-gradient(circle at 63% 9%, rgba(200,169,126,.35) 0 3px, transparent 4px),
+      radial-gradient(circle at 84% 34%, rgba(59,42,30,.12) 0 2px, transparent 3px),
+      radial-gradient(circle at 30% 52%, rgba(181,101,74,.14) 0 3px, transparent 4px),
+      radial-gradient(circle at 70% 70%, rgba(200,169,126,.3) 0 2px, transparent 3px),
+      radial-gradient(circle at 18% 88%, rgba(59,42,30,.1) 0 3px, transparent 4px),
+      radial-gradient(circle at 92% 92%, rgba(181,101,74,.16) 0 2px, transparent 3px);
+    background-size: 240px 240px;
+  }
+
+  .cairo, h1, h2, h3 {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  /* ---------- COVER (Fade Smooth) ---------- */
+  #cover {
+    position: fixed;
+    inset: 0;
+    max-width: 480px;
+    margin: 0 auto;
+    z-index: 100;
+    background: linear-gradient(170deg, var(--sand) 0%, var(--sand-dark) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+    transition: opacity 1.4s ease, filter 1.4s ease;
+  }
+  #cover.open { opacity: 0; filter: blur(6px); pointer-events: none; }
+  #cover .arch-cover {
+    width: 250px;
+    height: 330px;
+    border-radius: 125px 125px 30px 30px / 110px 110px 30px 30px;
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 20px;
+    box-shadow: 0 18px 40px rgba(126,63,43,.25);
+  }
+  #cover .small { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--terra); font-weight: 500; }
+  #cover .names { font-family: 'Cairo', sans-serif; font-size: 34px; margin: 14px 0 8px; color: var(--terra-dark); }
+  #cover .guest { font-size: 12px; margin-top: 16px; color: var(--muted); }
+  #cover .guest strong { display: block; font-size: 15px; margin-top: 4px; color: var(--ink); font-weight: 600; }
+
+  .btn-open {
+    margin-top: 30px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    background: var(--terra);
+    color: #fff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(126,63,43,.3);
+    transition: transform .3s ease;
+  }
+  .btn-open:hover { transform: translateY(-2px); }
+
+  section { position: relative; padding: 56px 24px; }
+
+  .bismillah {
+    font-family: 'Cairo', sans-serif;
+    font-size: 24px;
+    color: var(--terra-dark);
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--terra);
+    font-weight: 500;
+  }
+  h2 { font-size: 30px; color: var(--terra-dark); margin-top: 8px; }
+  .muted { font-size: 12px; line-height: 1.8; color: var(--muted); }
+
+  /* ---------- HERO: ASYMMETRIC SPLIT ---------- */
+  .hero { padding-top: 40px; }
+  .split {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    min-height: 380px;
+  }
+  .split .photo {
+    grid-row: 1;
+    grid-column: 1 / 2;
+    border-radius: 200px 200px 24px 24px / 240px 240px 24px 24px;
+    overflow: hidden;
+    border: 4px solid var(--paper);
+    box-shadow: 0 14px 30px rgba(126,63,43,.2);
+    margin-top: 40px;
+    height: 330px;
+    z-index: 1;
+  }
+  .split .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .split .txt {
+    grid-row: 1;
+    grid-column: 2 / 3;
+    align-self: end;
+    padding: 20px 0 10px 14px;
+    z-index: 2;
+    text-align: left;
+  }
+  .split .txt h1 { font-size: 34px; color: var(--terra-dark); line-height: 1.15; }
+  .split .txt .date {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 12px;
+    color: var(--terra);
+    font-weight: 500;
+  }
+  .split .txt .muted { margin-top: 14px; font-size: 11px; }
+  .split .txt .guest-line { margin-top: 12px; font-size: 12px; }
+
+  .hero-note {
+    margin: 26px 0 0 auto;
+    max-width: 280px;
+    background: var(--paper);
+    border-left: 3px solid var(--terra);
+    padding: 16px 18px;
+    text-align: left;
+    box-shadow: 0 6px 16px rgba(126,63,43,.08);
+  }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.show { opacity: 1; transform: none; }
+
+  /* Mempelai — asimetris zig-zag */
+  .couple { margin-top: 24px; display: flex; flex-direction: column; gap: 26px; }
+  .person { display: flex; gap: 16px; align-items: center; }
+  .person.right { flex-direction: row-reverse; text-align: right; }
+  .person img {
+    width: 130px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 80px 16px 80px 16px;
+    border: 3px solid var(--paper);
+    box-shadow: 0 8px 18px rgba(126,63,43,.15);
+    flex-shrink: 0;
+  }
+  .person.right img { border-radius: 16px 80px 16px 80px; }
+  .person h3 { font-size: 22px; color: var(--terra-dark); }
+  .person p { margin: 6px 0 0; font-size: 11px; line-height: 1.7; color: var(--muted); }
+  .amp { font-family: 'Cairo', sans-serif; font-size: 32px; color: var(--sand-dark); text-align: center; }
+
+  /* Countdown */
+  .countdown { display: flex; gap: 8px; margin-top: 22px; }
+  .cd-box {
+    flex: 1;
+    background: var(--paper);
+    border: 1px solid var(--sand-dark);
+    padding: 14px 0;
+    text-align: center;
+    border-radius: 12px 12px 4px 4px;
+  }
+  .cd-box b { display: block; font-size: 22px; font-weight: 700; font-family: 'Cairo', sans-serif; color: var(--terra-dark); font-variant-numeric: tabular-nums; }
+  .cd-box span { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+
+  /* Acara */
+  .acara-card {
+    margin-top: 16px;
+    background: var(--paper);
+    padding: 22px 20px;
+    border-radius: 4px 40px 4px 40px;
+    border: 1px solid var(--sand-dark);
+    text-align: left;
+  }
+  .acara-card.alt { border-radius: 40px 4px 40px 4px; margin-left: 24px; }
+  .acara-card h3 { font-size: 22px; color: var(--terra-dark); }
+  .acara-card p { margin: 6px 0; font-size: 12px; color: var(--muted); }
+  .btn-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 9px 18px;
+    border-radius: 30px;
+    background: var(--terra);
+    color: #fff;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  /* Galeri Filmstrip Vertical */
+  #galeri { padding-top: 40px; }
+  .filmstrip {
+    margin: 20px auto 0;
+    width: 230px;
+    background: #2A2019;
+    border-radius: 8px;
+    padding: 18px 0;
+    position: relative;
+    box-shadow: 0 14px 30px rgba(59,42,30,.35);
+    /* lubang sprocket di kiri & kanan */
+    background-image:
+      repeating-linear-gradient(to bottom, transparent 0 14px, #F6EEE0 14px 22px, transparent 22px 36px);
+    background-repeat: no-repeat;
+    background-position: left 6px top 0, right 6px top 0;
+    background-size: 10px 100%, 10px 100%;
+  }
+  .frames {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0 26px;
+    max-height: 520px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--sand-dark) transparent;
+  }
+  .frames img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 2px;
+    border: 3px solid #1A130D;
+    flex-shrink: 0;
+  }
+  .frame-note { font-size: 10px; letter-spacing: 1px; color: var(--muted); margin-top: 14px; text-transform: uppercase; }
+
+  /* Amplop */
+  .amplop-card {
+    margin-top: 20px;
+    background: var(--terra-dark);
+    color: var(--sand-light);
+    padding: 26px 20px;
+    border-radius: 200px 200px 22px 22px / 60px 60px 22px 22px;
+    text-align: center;
+  }
+  .amplop-card .bank { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--sand); font-weight: 500; }
+  .amplop-card .no { font-size: 22px; font-weight: 600; letter-spacing: 2px; margin: 10px 0 4px; }
+  .amplop-card .an { font-size: 11px; color: var(--sand); }
+  .amplop-card img {
+    width: 170px; height: 170px; margin-top: 18px;
+    background: #fff; padding: 8px; border-radius: 14px;
+  }
+  .btn-copy {
+    margin-top: 16px;
+    padding: 11px 22px;
+    border: none;
+    border-radius: 30px;
+    background: var(--sand-light);
+    color: var(--terra-dark);
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  /* RSVP */
+  .rsvp form { display: flex; flex-direction: column; gap: 14px; text-align: left; margin-top: 18px; }
+  .rsvp label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--terra); font-weight: 500; }
+  .rsvp input, .rsvp select, .rsvp textarea {
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px 14px;
+    border: 1px solid var(--sand-dark);
+    border-radius: 10px;
+    background: var(--paper);
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--ink);
+    outline: none;
+  }
+  .rsvp input:focus, .rsvp select:focus, .rsvp textarea:focus { border-color: var(--terra); }
+  .rsvp textarea { min-height: 90px; resize: vertical; }
+  .rsvp button {
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: var(--terra-dark);
+    color: #fff;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 4px;
+  }
+
+  footer { text-align: center; padding: 30px 20px 10px; font-size: 11px; color: var(--muted); }
+  footer strong { font-family: 'Cairo', sans-serif; font-size: 22px; color: var(--terra-dark); display: block; margin-top: 6px; }
+
+  /* Music */
+  #musicBtn {
+    position: fixed;
+    top: 16px;
+    right: calc(50% - 224px);
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: var(--terra);
+    color: #fff;
+    font-size: 17px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 50;
+    box-shadow: 0 4px 12px rgba(126,63,43,.3);
+  }
+  #musicBtn.active { display: flex; }
+  #musicBtn.playing { animation: spin 6s linear infinite; }
+
+  /* Bottom Nav */
+  #bottomNav {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 440px;
+    display: none;
+    justify-content: space-around;
+    background: var(--paper);
+    border: 1px solid var(--sand-dark);
+    border-radius: 40px;
+    padding: 10px 6px;
+    z-index: 60;
+    box-shadow: 0 10px 26px rgba(126,63,43,.18);
+  }
+  #bottomNav.active { display: flex; }
+  #bottomNav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    transition: all .3s ease;
+  }
+  #bottomNav a:hover, #bottomNav a.current { background: var(--sand); color: var(--terra-dark); }
+  #bottomNav a span.ic { font-size: 15px; }
+
+  /* Toast */
+  #toast {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%, 20px);
+    background: var(--terra-dark);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s ease;
+    z-index: 200;
+    white-space: nowrap;
+  }
+  #toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+.rj-cp{position:relative;margin:0 auto 18px;flex:none}.rj-cp img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 18%;border-radius:inherit}
+.rj-pill{width:78px;height:116px;margin-bottom:12px;padding:4px;border-radius:40px;background:linear-gradient(160deg,#c9704f,#8e4430);box-shadow:0 8px 20px rgba(120,60,40,.3)}.rj-pill img{border-radius:36px}</style>
+</head>
+<body>
+
+<!-- COVER (Fade Smooth) -->
+<div id="cover">
+  <div class="arch-cover">
+    <div class="rj-cp rj-pill"><img src="foto/pantai-berdua.webp" alt="Foto mempelai berdua" width="400" height="500"></div><div class="small">Undangan Pernikahan</div>
+    <div class="names">Ahmad &amp; Fatimah</div>
+    <div class="guest">Kepada Yth. Bapak/Ibu/Saudara/i<strong id="guestCover">Tamu Undangan</strong></div>
+  </div>
+  <button class="btn-open" id="openBtn" style="margin-top:36px">Buka Undangan</button>
+</div>
+
+<!-- Audio -->
+<audio id="bgm" loop preload="none" src="musik.mp3"></audio>
+<button id="musicBtn" aria-label="Musik">&#9835;</button>
+
+<div class="wrap" id="top">
+
+  <!-- BERANDA: asymmetric split -->
+  <section id="beranda" class="hero">
+    <div class="bismillah reveal">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+    <div class="split reveal">
+      <div class="photo">
+        <img src="foto/pantai-berdua.webp" loading="lazy" width="400" height="520" alt="Foto cover">
+      </div>
+      <div class="txt">
+        <div class="label">Save the Date</div>
+        <h1 style="margin-top:6px">Ahmad &amp;<br>Fatimah</h1>
+        <div class="date">Sabtu, 12 Desember 2026</div>
+      </div>
+    </div>
+    <div class="hero-note reveal">
+      <p class="muted" style="margin:0">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir di acara pernikahan kami.</p>
+      <p class="muted" style="margin:10px 0 0">Kepada Yth. <strong id="guestHero" style="color:var(--ink)">Tamu Undangan</strong></p>
+    </div>
+  </section>
+
+  <!-- MEMPELAI -->
+  <section id="mempelai" style="padding-top:20px">
+    <div class="label reveal">Mempelai</div>
+    <h2 class="reveal">Dua Jiwa, Satu Cerita</h2>
+    <div class="couple">
+      <div class="person reveal">
+        <img src="foto/pantai-pria.webp" loading="lazy" width="300" height="360" alt="Mempelai pria">
+        <div>
+          <h3>Ahmad Hidayat, S.T.</h3>
+          <p>Putra dari Bapak Hasan &amp; Ibu Siti Aminah</p>
+        </div>
+      </div>
+      <div class="amp reveal">&amp;</div>
+      <div class="person right reveal">
+        <img src="foto/pantai-wanita.webp" loading="lazy" width="300" height="360" alt="Mempelai wanita">
+        <div>
+          <h3>Fatimah Azzahra, S.Pd.</h3>
+          <p>Putri dari Bapak Yusuf &amp; Ibu Nur Hasanah</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACARA -->
+  <section id="acara">
+    <div class="label reveal">Hitung Mundur</div>
+    <h2 class="reveal">Menuju Hari Bahagia</h2>
+    <div class="countdown reveal">
+      <div class="cd-box"><b id="d">00</b><span>Hari</span></div>
+      <div class="cd-box"><b id="h">00</b><span>Jam</span></div>
+      <div class="cd-box"><b id="m">00</b><span>Menit</span></div>
+      <div class="cd-box"><b id="s">00</b><span>Detik</span></div>
+    </div>
+
+    <div class="acara-card reveal">
+      <h3>Akad Nikah</h3>
+      <p>Sabtu, 12 Desember 2026</p>
+      <p>Pukul 08.00 WIB - Selesai</p>
+      <p>Masjid Al-Ikhlas, Jl. Contoh No. 12, Semarang</p>
+      <a class="btn-link" href="#" onclick="return false;">Lihat Lokasi</a>
+    </div>
+
+    <div class="acara-card alt reveal">
+      <h3>Resepsi</h3>
+      <p>Sabtu, 12 Desember 2026</p>
+      <p>Pukul 11.00 - 14.00 WIB</p>
+      <p>Gedung Serbaguna Permata, Jl. Contoh No. 45, Semarang</p>
+      <a class="btn-link" href="#" onclick="return false;">Lihat Lokasi</a>
+    </div>
+  </section>
+
+  <!-- GALERI FILMSTRIP VERTIKAL -->
+  <section id="galeri">
+    <div class="label reveal">Galeri</div>
+    <h2 class="reveal">Jejak Perjalanan</h2>
+    <p class="muted reveal">Geser ke atas dan ke bawah untuk melihat setiap frame.</p>
+    <div class="filmstrip reveal">
+      <div class="frames">
+        <img src="foto/pantai-berdua.webp" loading="lazy" width="400" height="500" alt="Galeri 1">
+        <img src="foto/pantai-wanita.webp" loading="lazy" width="400" height="500" alt="Galeri 2">
+        <img src="foto/pantai-pria.webp" loading="lazy" width="400" height="500" alt="Galeri 3">
+        <img src="foto/pantai-berdua.webp" loading="lazy" width="400" height="500" alt="Galeri 4">
+        <img src="foto/pantai-wanita.webp" loading="lazy" width="400" height="500" alt="Galeri 5">
+        <img src="foto/pantai-berdua.webp" loading="lazy" width="400" height="500" alt="Galeri 6">
+      </div>
+    </div>
+    <div class="frame-note">Frame 01 - 06</div>
+  </section>
+
+  <!-- AMPLOP DIGITAL -->
+  <section id="amplop" style="padding-top:20px">
+    <div class="label reveal">Amplop Digital</div>
+    <p class="muted reveal" style="margin-top:12px">Doa restu Anda adalah karunia yang sangat berarti. Bagi yang ingin memberikan tanda kasih, dapat melalui:</p>
+    <div class="amplop-card reveal">
+      <div class="bank">Bank BCA</div>
+      <div class="no" id="rekening">1234 5678 90</div>
+      <div class="an">a.n. Ahmad Hidayat</div>
+      <button class="btn-copy" id="copyBtn">Salin Nomor Rekening</button>
+      <div style="margin-top:20px;font-size:10px;letter-spacing:2px;color:var(--sand)">ATAU SCAN QRIS</div>
+      <img src="foto/pantai-berdua.webp" loading="lazy" width="300" height="300" alt="QRIS">
+    </div>
+  </section>
+
+  <!-- BUKU TAMU / RSVP -->
+  <section id="ucapan" class="rsvp">
+    <div class="label reveal">Buku Tamu</div>
+    <h2 class="reveal">Doa &amp; Konfirmasi</h2>
+    <p class="muted reveal">Konfirmasi kehadiran dan titipkan doa terbaik untuk kami.</p>
+    <form id="rsvpForm" class="reveal">
+      <div>
+        <label for="nama">Nama Lengkap</label>
+        <input id="nama" type="text" required placeholder="Tulis nama Anda">
+      </div>
+      <div>
+        <label for="hadir">Kehadiran</label>
+        <select id="hadir">
+          <option value="Hadir">Insya Allah Hadir</option>
+          <option value="Tidak Hadir">Maaf, Tidak Dapat Hadir</option>
+        </select>
+      </div>
+      <div>
+        <label for="pesan">Doa &amp; Ucapan</label>
+        <textarea id="pesan" placeholder="Tulis doa dan ucapan Anda..."></textarea>
+      </div>
+      <button type="submit">Kirim via WhatsApp</button>
+    </form>
+  </section>
+
+  <footer>
+    Wassalamu'alaikum Warahmatullahi Wabarakatuh
+    <strong>Ahmad &amp; Fatimah</strong>
+  </footer>
+</div>
+
+<!-- Floating Bottom Navigation -->
+<nav id="bottomNav">
+  <a href="#beranda"><span class="ic">&#9750;</span>Beranda</a>
+  <a href="#mempelai"><span class="ic">&#9825;</span>Mempelai</a>
+  <a href="#acara"><span class="ic">&#9737;</span>Acara</a>
+  <a href="#galeri"><span class="ic">&#10064;</span>Galeri</a>
+  <a href="#ucapan"><span class="ic">&#9998;</span>Ucapan</a>
+</nav>
+
+<div id="toast"></div>
+
+<script>
+  // 1. Nama tamu dari URL (?to=Nama+Tamu)
+  const params = new URLSearchParams(window.location.search);
+  const guestName = (params.get('to') || '').trim() || 'Tamu Undangan';
+  ['guestCover', 'guestHero'].forEach(id => {
+    document.getElementById(id).textContent = guestName;
+  });
+
+  // 2. Dummy SVG internal (tanpa URL eksternal)
+  function dummy(label, w, h, bg = '#E9D8BE') {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
+      <rect width="100%" height="100%" fill="${bg}"/>
+      <circle cx="${w * 0.8}" cy="${h * 0.2}" r="${w * 0.12}" fill="#C8A97E" opacity=".6"/>
+      <path d="M0 ${h} L${w * 0.35} ${h * 0.55} L${w * 0.6} ${h * 0.8} L${w} ${h * 0.45} V${h} Z" fill="#B5654A" opacity=".35"/>
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="${Math.max(14, Math.round(w / 14))}" fill="#7E3F2B">${label} (${w}x${h})</text>
+    </svg>`;
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  }
+  document.querySelectorAll('img[data-dummy]').forEach(img => {
+    img.src = dummy(img.dataset.dummy, img.getAttribute('width'), img.getAttribute('height'));
+  });
+
+  // 3. Toast
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+  }
+
+  // 4. Cover + musik
+  const cover = document.getElementById('cover');
+  const bgm = document.getElementById('bgm');
+  const musicBtn = document.getElementById('musicBtn');
+  const bottomNav = document.getElementById('bottomNav');
+  let isPlaying = false;
+
+  function setPlaying(state) {
+    isPlaying = state;
+    musicBtn.classList.toggle('playing', state);
+  }
+
+  async function playMusic() {
+    try {
+      await bgm.play();
+      setPlaying(true);
+    } catch (e) {
+      setPlaying(false);
+    }
+  }
+
+  musicBtn.addEventListener('click', () => {
+    if (isPlaying) { bgm.pause(); setPlaying(false); }
+    else { playMusic(); }
+  });
+
+  document.getElementById('openBtn').addEventListener('click', () => {
+    cover.classList.add('open');
+    musicBtn.classList.add('active');
+    bottomNav.classList.add('active');
+    playMusic();
+    setTimeout(() => { cover.style.display = 'none'; }, 1400);
+    revealOnScroll();
+  });
+
+  // 5. Reveal saat scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+  }, { threshold: 0.15 });
+
+  function revealOnScroll() {
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }
+
+  // 6. Highlight menu aktif
+  const navLinks = document.querySelectorAll('#bottomNav a');
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.toggle('current', a.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { threshold: 0.5 });
+  ['beranda', 'mempelai', 'acara', 'galeri', 'ucapan'].forEach(id => {
+    sectionObserver.observe(document.getElementById(id));
+  });
+
+  // 7. Countdown
+  const target = new Date('2026-12-12T08:00:00+07:00').getTime();
+  const pad = n => String(n).padStart(2, '0');
+  function tick() {
+    const diff = Math.max(0, target - Date.now());
+    document.getElementById('d').textContent = pad(Math.floor(diff / 86400000));
+    document.getElementById('h').textContent = pad(Math.floor(diff / 3600000) % 24);
+    document.getElementById('m').textContent = pad(Math.floor(diff / 60000) % 60);
+    document.getElementById('s').textContent = pad(Math.floor(diff / 1000) % 60);
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // 8. Salin rekening
+  document.getElementById('copyBtn').addEventListener('click', async () => {
+    const no = document.getElementById('rekening').textContent.replace(/\s/g, '');
+    try {
+      await navigator.clipboard.writeText(no);
+      showToast('Nomor rekening berhasil disalin');
+    } catch (err) {
+      showToast('Gagal menyalin, silakan salin manual');
+    }
+  });
+
+  // 9. RSVP -> WhatsApp
+  const WA_NUMBER = '6281234567890'; // ganti dengan nomor WhatsApp penerima (format 62...)
+  document.getElementById('rsvpForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const nama = document.getElementById('nama').value.trim();
+    const hadir = document.getElementById('hadir').value;
+    const pesan = document.getElementById('pesan').value.trim();
+    const text =
+      `Assalamu'alaikum, saya ${nama}.\n` +
+      `Konfirmasi: ${hadir}\n` +
+      (pesan ? `Doa & Ucapan: ${pesan}` : '');
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+    showToast('Terima kasih, ucapan Anda terkirim');
+    e.target.reset();
+  });
+</script>
+</body>
+</html>
